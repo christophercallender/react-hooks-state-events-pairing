@@ -7,14 +7,12 @@ function Comments({ showCommentsSet, setShowComments, comments }) {
          {showCommentsSet ? (
             <>
                <h2>{`${comments.length} Comments`}</h2>
-               {comments.map((comment) => {
-                  return (
-                     <>
-                        <strong>{comment.user}</strong>
-                        <p>{comment.comment}</p>
-                     </>
-                  );
-               })}
+               {comments.map(({ user, comment }) => (
+                  <>
+                     <strong>{user}</strong>
+                     <p>{comment}</p>
+                  </>
+               ))}
             </>
          ) : null}
       </>
